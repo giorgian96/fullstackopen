@@ -1,0 +1,25 @@
+note over user:
+user writes something into the text field
+then clicks submit
+end note
+
+note over browser:
+on submit, the note is saved in the notes list
+the note list is then re-rendered
+the new note is sent to the server
+
+the Content-Type header tells the server
+that the data is in JSON format
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+server creates a new note from the user input it received
+end note
+
+server-->browser: HTTP 201 response (created)
+
+note over user:
+user sees the page with the new note
+end note
